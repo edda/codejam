@@ -1,0 +1,1 @@
+Dir[File.dirname(__FILE__) + "/rounds/**/*.rb"].each {|file| require file }
