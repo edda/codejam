@@ -1,0 +1,12 @@
+require 'problems/<%= name.underscore %>'
+
+describe <%= name.classify %> do
+
+  it "should solve test.in and return content of test.out" do
+    File.open("data/<%= name.underscore %>/test.out").readlines.each do |line|
+      STDOUT.should_receive(:puts).with(line.strip)
+    end
+    
+    <%= name.classify %>.new("data/<%= name.underscore %>/test.in")
+  end
+end

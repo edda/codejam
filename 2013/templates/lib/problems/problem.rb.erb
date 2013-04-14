@@ -1,0 +1,20 @@
+# Supporting code can be found at https://github.com/edda/codejam
+
+class <%= name.classify %>
+
+  def initialize(filename)
+    input = File.readlines(filename)
+
+    input.shift.to_i.times do |i|
+      puts "Case ##{i+1}: #{solve(input.shift.chomp)}"
+    end
+  end
+
+  def solve(input)
+    input.downcase
+  end
+
+  def debug(*args)
+    $stderr.puts *args
+  end
+end
